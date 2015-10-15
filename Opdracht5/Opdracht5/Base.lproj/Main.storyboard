@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nbo-0m-nYA">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="dHe-BD-PaH">
+            <objects>
+                <tableViewController title="Root View Controller" id="dYN-AC-JOE" customClass="TableViewController" customModule="Opdracht5" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" id="S58-xu-bTo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Article" rowHeight="73" id="DE8-np-A1p" customClass="TableViewCell" customModule="Opdracht5" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="73"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DE8-np-A1p" id="M0C-aw-gb8">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GD-gg-dji" userLabel="TitleLabel">
+                                            <rect key="frame" x="15" y="0.0" width="571" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uic-Nh-CsV" userLabel="DescLabel">
+                                            <rect key="frame" x="15" y="25" width="554" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="uic-Nh-CsV" secondAttribute="trailing" constant="23" id="0h6-hJ-poc"/>
+                                        <constraint firstItem="9GD-gg-dji" firstAttribute="leading" secondItem="uic-Nh-CsV" secondAttribute="leading" id="4eb-wS-IeU"/>
+                                        <constraint firstItem="9GD-gg-dji" firstAttribute="centerX" secondItem="M0C-aw-gb8" secondAttribute="centerX" id="5OE-TQ-q7u"/>
+                                        <constraint firstItem="9GD-gg-dji" firstAttribute="leading" secondItem="M0C-aw-gb8" secondAttribute="leadingMargin" constant="7" id="81v-Ci-EoF"/>
+                                        <constraint firstItem="uic-Nh-CsV" firstAttribute="centerY" secondItem="M0C-aw-gb8" secondAttribute="centerY" id="Tbk-uI-yja"/>
+                                        <constraint firstItem="uic-Nh-CsV" firstAttribute="top" secondItem="M0C-aw-gb8" secondAttribute="topMargin" constant="17" id="n62-1o-BUX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="9GD-gg-dji" secondAttribute="bottom" constant="36" id="u0w-Nw-7BQ"/>
+                                        <constraint firstItem="9GD-gg-dji" firstAttribute="top" secondItem="M0C-aw-gb8" secondAttribute="top" id="vMd-5J-Qdq"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="Description" destination="uic-Nh-CsV" id="ONy-Vf-KuK"/>
+                                    <outlet property="Title" destination="9GD-gg-dji" id="9hK-WU-weB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dYN-AC-JOE" id="EwI-vX-Ogz"/>
+                            <outlet property="delegate" destination="dYN-AC-JOE" id="FNc-2Q-7uU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="Bly-aQ-PdC"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7eH-31-F0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="637" y="301"/>
+        </scene>
+        <!--NavigationController-->
+        <scene sceneID="lOx-L8-3xb">
+            <objects>
+                <navigationController title="NavigationController" id="Nbo-0m-nYA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uwx-VU-JQQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dYN-AC-JOE" kind="relationship" relationship="rootViewController" id="En0-Lz-Yn7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mHJ-3E-XRJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-183" y="301"/>
+        </scene>
+    </scenes>
+</document>
