@@ -22,7 +22,6 @@ struct Article{
     let Url: String
     var Categories: [Categorie] = []
     init(json data: JSON){
-        
         self.Id = data["Id"].int!
         self.Feed = data["Feed"].int!
         self.Image = data["Image"].stringValue

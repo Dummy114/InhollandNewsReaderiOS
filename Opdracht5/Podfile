@@ -3,4 +3,7 @@ use_frameworks!
 target 'Opdracht5' do
   pod 'Alamofire', '~> 3.0'
   pod 'SwiftyJSON', '~> 2.3'
+  pod 'AlamofireImage', '~> 2.0'
+  pod "swift-serialize"
+  pod ‘MBProgressHUD', '~> 0.9.1'
 end

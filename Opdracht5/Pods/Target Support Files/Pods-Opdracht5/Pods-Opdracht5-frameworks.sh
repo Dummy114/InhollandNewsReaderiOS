@@ -85,9 +85,15 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Opdracht5/Alamofire.framework"
+  install_framework "Pods-Opdracht5/AlamofireImage.framework"
+  install_framework "Pods-Opdracht5/MBProgressHUD.framework"
   install_framework "Pods-Opdracht5/SwiftyJSON.framework"
+  install_framework "Pods-Opdracht5/Serialize.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Opdracht5/Alamofire.framework"
+  install_framework "Pods-Opdracht5/AlamofireImage.framework"
+  install_framework "Pods-Opdracht5/MBProgressHUD.framework"
   install_framework "Pods-Opdracht5/SwiftyJSON.framework"
+  install_framework "Pods-Opdracht5/Serialize.framework"
 fi

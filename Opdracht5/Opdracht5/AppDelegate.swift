@@ -16,10 +16,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //api
     let _api : AlamofireApiService = AlamofireApiService.instance
     
+    let _storyBoard = UIStoryboard(name: "Main", bundle: nil)
+    
+    var _isLoggedIn : Bool = false
+    
+    var _userAuth : UserAuth?
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        let _user = Extensions.getUser()
+        if _user != nil{
+            self._isLoggedIn = true
+        }
+        else{
+            self._isLoggedIn = false
+        }
 
         // Override point for customization after application launch.
         return true
+    }
+    func getViewController(viewcontrollername : String) -> UIViewController {
+        
+        return _storyBoard.instantiateViewControllerWithIdentifier(viewcontrollername)
+    }
+    
+    func setUserAuth(userauth: UserAuth){
+        self._userAuth = userauth
+    }
+    func getUserAuth() -> UserAuth {
+        return self._userAuth!
     }
 
     func applicationWillResignActive(application: UIApplication) {
