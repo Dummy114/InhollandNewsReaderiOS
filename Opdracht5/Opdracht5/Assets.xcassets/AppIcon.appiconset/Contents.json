@@ -36,13 +36,15 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "app_logo_120.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "iphone",
       "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "imageedit_5_3656404517.png",
       "scale" : "3x"
     },
     {
@@ -91,8 +93,9 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "imageedit_1_8673756148.png",
       "scale" : "2x"
     }
   ],

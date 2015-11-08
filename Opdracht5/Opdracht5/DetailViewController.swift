@@ -12,6 +12,7 @@ import AlamofireImage
 class DetailViewController: UIViewController {
     
     var _article : Article?
+    @IBOutlet weak var Categories: UIStackView!
     
     @IBOutlet weak var ReadMore: UIButton!
     @IBOutlet weak var Related: UIStackView!
@@ -32,6 +33,7 @@ class DetailViewController: UIViewController {
             }
             
         }
+        // related
         for string in (_article?.Related)!{
             let _label : UILabel = UILabel()
             _label.numberOfLines = 0
@@ -41,10 +43,30 @@ class DetailViewController: UIViewController {
             
             self.Related.addArrangedSubview(_label)
         }
+        
+        // category
+        for categorie in (_article?.Categories)!{
+            /*let _label : UILabel = UILabel()
+            _label.numberOfLines = 0
+            _label.font = UIFont(name: _label.font.fontName, size: 12)
+            _label.lineBreakMode = NSLineBreakMode.ByTruncatingTail
+            _label.text = categorie.Name
+            self.Categories.addArrangedSubview(_label)*/
+            let _button : UIButton = UIButton()
+            _button.setTitle(categorie.Name, forState: UIControlState.Normal)
+            _button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            //_button.titleLabel?.font = UIFont(name: (_button.titleLabel?.font.fontName)!, size: 12)
+            _button.layer.backgroundColor = UIColor.grayColor().CGColor
+            _button.layer.borderWidth = 1.0
+            _button.layer.borderColor = UIColor.whiteColor().CGColor
+            self.Categories.addArrangedSubview(_button)
+        }
+        
+        //readmore button
         self.ReadMore.addTarget(self, action: "OpenUrl:", forControlEvents: UIControlEvents.TouchUpInside)
         
+        //share button
         let share_button = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Action, target: self, action: "OnShareClicked")
-        
         self.navigationItem.rightBarButtonItem = share_button
         
     }
@@ -54,6 +76,10 @@ class DetailViewController: UIViewController {
         let title : String = (_article?.Title)!
         let objects = [title, url]
         let activityVC = UIActivityViewController(activityItems: objects, applicationActivities: nil)
+        
+        //ipad fix
+        activityVC.popoverPresentationController?.sourceView = self.view
+        
         self.presentViewController(activityVC, animated: true, completion: nil)
     }
     

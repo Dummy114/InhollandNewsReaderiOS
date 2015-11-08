@@ -11,7 +11,7 @@ import MBProgressHUD
 import Alamofire
 import AlamofireImage
 
-class TableViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class TableViewController: UITableViewController{
     
     var nextId: Int = 0
     
@@ -20,7 +20,6 @@ class TableViewController: UITableViewController, UIPickerViewDataSource, UIPick
     var _articles : [Article] = []
     var UserToken : UserAuth?
     var _loading : MBProgressHUD = MBProgressHUD()
-    var pickerdata = ["test1", "test2", "test3"]
     var _imageCache : NSCache?
     var _isLoading : Bool?
     override func viewDidLoad() {
@@ -43,32 +42,6 @@ class TableViewController: UITableViewController, UIPickerViewDataSource, UIPick
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
     }
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerdata.count;
-    }
-    
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerdata[row]
-    }
-    
-    /*func OnFeedsClicked(){
-        
-        let feedsSelector = UIPickerView(frame: CGRectMake(0, 200, view.frame.width, 300))
-        feedsSelector.delegate = self
-        feedsSelector.dataSource = self
-        feedsSelector.showsSelectionIndicator = true
-        feedsSelector.backgroundColor = UIColor.clearColor()
-        
-        let alertController = UIAlertController()
-        alertController.view.addSubview(feedsSelector)
-        self.presentViewController(alertController, animated: true, completion: nil)
-
-    }*/
-    
     func checkLogin(){
         let _user = Extensions.getUser()
         if _user != nil{
@@ -170,7 +143,6 @@ class TableViewController: UITableViewController, UIPickerViewDataSource, UIPick
             let cancel = UIAlertAction(title:"Cancel", style: .Cancel){(_) in }
             let logout = UIAlertAction(title: "Logout", style: .Default){(_) in
                 self.UserToken = nil
-                //self.changeFavoriteBar(false)
                 Extensions.deleteUser()
                 self.fetchList(nil)
             }
@@ -180,12 +152,6 @@ class TableViewController: UITableViewController, UIPickerViewDataSource, UIPick
         }
         
     }
-    
-    /*func changeFavoriteBar(turnedOn : Bool){
-        let controller : TabBarControllerFavorites = Extensions.getAppDelegate().getViewController("TabBarControllerFavorites") as! TabBarControllerFavorites
-        controller.changeFavoriteBar(turnedOn)
-        
-    }*/
     
     private func showErrorBox(){
         let alertController = UIAlertController(title: "Error", message: "No internet connection", preferredStyle: .Alert)
@@ -215,8 +181,6 @@ class TableViewController: UITableViewController, UIPickerViewDataSource, UIPick
             //set userauth
             Extensions.getAppDelegate().setUserAuth(_userAuth)
             
-            //enable favoritebar
-            //self.changeFavoriteBar(true)
             }, callbackFailure: { (results) -> () in
                 self.removeLoading()
                 let status = Reach().connectionStatus()

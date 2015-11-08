@@ -84,6 +84,7 @@
 		3F3125671BCFBB2400BA38FE /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3FDBD87F1BCFDA94007DD61F /* TableViewCell.swift */,
 				3F3125681BCFBB4200BA38FE /* Article.swift */,
 				3F31256A1BCFBBE000BA38FE /* Categorie.swift */,
 				3F31256C1BCFBCFE00BA38FE /* Results.swift */,
@@ -121,11 +122,9 @@
 				3F3125671BCFBB2400BA38FE /* Core */,
 				3FCB6DFC1BCF9C61000D49CE /* AppDelegate.swift */,
 				3FCB6E001BCF9C61000D49CE /* Main.storyboard */,
-				3FDBD87F1BCFDA94007DD61F /* TableViewCell.swift */,
 				3FCB6E031BCF9C61000D49CE /* Assets.xcassets */,
 				3FCB6E081BCF9C61000D49CE /* Info.plist */,
 				3FCB6E371BCFADE2000D49CE /* Extensions.swift */,
-				77E2B9291BEE7FE9000CF11E /* Reach.swift */,
 			);
 			path = Opdracht5;
 			sourceTree = "<group>";
@@ -143,6 +142,7 @@
 		773800061BD0149600DDB1DE /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				77E2B9291BEE7FE9000CF11E /* Reach.swift */,
 				3FCB6E2B1BCFAA15000D49CE /* AlamofireApiService.swift */,
 			);
 			name = Infrastructure;

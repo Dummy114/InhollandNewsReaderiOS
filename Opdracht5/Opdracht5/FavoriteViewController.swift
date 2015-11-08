@@ -73,8 +73,15 @@ class FavoriteViewController: UITableViewController {
             self.tableView.reloadData()
             self.removeLoading()
             }) { (results) -> () in
-                let stop : Bool = true;
+                self.showErrorBox()
         }
+    }
+    
+    private func showErrorBox(){
+        let alertController = UIAlertController(title: "Error", message: "No internet connection", preferredStyle: .Alert)
+        let cancel = UIAlertAction(title: "Ok", style: .Default){(_) in }
+        alertController.addAction(cancel)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
